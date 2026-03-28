@@ -1,0 +1,14 @@
+<h1>Student List</h1>
+<table border="1">
+<tr><th>Name</th><th>Course</th><th>Fees</th></tr>
+<tr>
+{% for s in stu %}
+<td>{{s.name}}</td>
+<td>{{s.course}}</td>
+<td>{{s.fee}}</td>
+    <td><a href="{% url 'stu_update' s.pk %}">Edit</a></td>
+    <td><a href="{% url 'stu_delete' s.pk %}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+<a href="{% url 'stu_create' %}">Add Student</a>
